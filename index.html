@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Stay alert and aware with this sleek UI countdown timer! ⏳🏁 Perfect for tracking deadlines and managing tasks⏳📝">
+        <meta name="keywords" content="countdown-timer, timer, productivity, tasks">
+        <meta name="author" content="Farouk Bouaziz">
+        <meta name="robots" content="index, follow">
+
+        <!-- Open Graph Meta -->
+        <meta property="og:title" content="Countdown Timer">
+        <meta property="og:description" content="Stay alert and aware with this sleek UI countdown timer! ⏳🏁 Perfect for tracking deadlines and managing tasks⏳📝">
+        <meta property="og:image" content="https://via.placeholder.com/1200x630">
+        <meta property="og:url" content="https://example.com">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:site_name" content="Countdown Timer">
+        <!-- Roboto Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title>Countdown Timer</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="script.js"></script>         
+    </head>
+    <body>
+        <div class="notification-box" data-err-box><p data-err-msg></p></div>
+        <!-- Countdown Form Interface -->
+        <form class="new-form" data-new-form>
+            <div>
+                <label for="countdown-title">Enter Countdown Title</label>
+                <input
+                id="countdown-title" 
+                type="text" 
+                name="title" 
+                class="countdown-title"
+                aria-label="New countdown title"
+                data-new-title
+                placeholder="What are you counting down to?"
+                />
+            </div>
+            <div>
+                <label for="countdown-date">Pick a Date</label>
+                <input 
+                id="countdown-date"
+                type="datetime-local"
+                name="date-picker"
+                class="countdown-date"
+                aria-label="new countdown date"
+                data-new-date
+                />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <!-- Main Countdown Interface -->
+        <div class="countdown" data-countdown hidden>
+            <h2 data-countdown-title>Countdown Title</h2>
+            <ul aria-live="polite">
+                <li>
+                    <time datetime="P3D">
+                        <span data-countdown-time></span> Days
+                    </time>
+                </li>
+                <li><span>:</span></li>
+                <li>
+                    <time datetime="PT6H">
+                        <span data-countdown-time></span> Hours
+                    </time>
+                </li>
+                <li><span>:</span></li>
+                <li>
+                    <time datetime="PT12M">
+                        <span data-countdown-time></span> Minutes
+                    </time>
+                </li>
+                <li><span>:</span></li>
+                <li>
+                    <time datetime="PT13S">
+                        <span data-countdown-time></span> Seconds
+                    </time>
+                </li>
+            </ul>            
+            <button type="button" aria-label="New countdown" data-new-btn>New Countdown</button>
+        </div>
+        <!-- Complete Interface -->
+        <div class="completed" data-completed hidden>
+            <h2>Countdown Completed!</h2>
+            <p class="completed-info" data-completed-info></p>
+            <button type="button" aria-label="New countdown" data-new-btn>New Countdown</button>
+        </div>
+    </body>
+</html>
